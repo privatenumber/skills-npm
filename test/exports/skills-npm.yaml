@@ -3,6 +3,8 @@
   cleanupStaleSkills: function
   createTargetName: function
   defineConfig: function
+  detectAgentBinary: function
+  detectAgentsByBinary: function
   detectInstalledAgents: function
   filterSkills: function
   getAllAgentTypes: function
@@ -28,4 +30,6 @@
   symlinkSkill: function
   symlinkSkills: function
   updateGitignore: function
+  whichAny: function
+  whichBinary: function
 ./cli: {}
