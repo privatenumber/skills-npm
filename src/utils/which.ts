@@ -32,9 +32,7 @@ export async function whichBinary(name: string): Promise<string | null> {
         cache.set(name, candidate)
         return candidate
       }
-      catch {
-        // not found, continue
-      }
+      catch {}
     }
   }
 

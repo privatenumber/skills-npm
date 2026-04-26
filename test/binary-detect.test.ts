@@ -12,7 +12,7 @@ describe('detectAgentBinary', () => {
   })
 
   it('returns null for universal agent (not in binary map)', async () => {
-    const result = await detectAgentBinary('universal' as any)
+    const result = await detectAgentBinary('universal')
     expect(result).toBeNull()
   })
 })
@@ -47,6 +47,7 @@ describe('detectAgentsByBinary (mock PATH)', () => {
   })
 
   it.skipIf(process.platform === 'win32')('detects claude-code when stub binary is on PATH', async () => {
+    // Reset to bypass which.ts's module-scoped cache, which earlier tests populated against the real PATH.
     vi.resetModules()
     const { detectAgentsByBinary: detect } = await import('../src/binary-detect')
     const result = await detect()
